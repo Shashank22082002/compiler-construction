@@ -11,7 +11,10 @@
 <li> LINUX TERMINAL(preferably or download some plugins to run make command on windows)
 </ul>
 
-### To Run the compiler, extract the zip and run make command(on a linux terminal)
+### To Run the compiler, extract the zip and run 
+`make`
+
+### This will generate a build of the compiler
 
 ### Next run the command 
 `./compiler <test_file.txt> <code.asm>`
