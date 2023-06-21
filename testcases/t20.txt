@@ -1,0 +1,11 @@
+** ----------- This test case demonstrates the usage of for loop ----------- **
+<<<driver Program>>>
+start
+declare num, a, k:integer;
+num:=9;
+for( k in 2..8)
+start
+a:=(num – k)*(num-k);
+print(a);
+end
+end

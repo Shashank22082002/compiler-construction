@@ -1,0 +1,84 @@
+	 1.<program>
+		 2.<moduleDeclarations>
+		 2.<otherModules>
+		 2.DRIVER driver
+			 3.<moduleDef>
+				 4.<statements>
+					 5.<declareStmt>
+						 6.<idList>
+							 7.ID x
+							 7.ID y
+							 7.ID z
+						 6.INTEGER integer
+					 5.<declareStmt>
+						 6.<idList>
+							 7.ID b
+						 6.BOOLEAN boolean
+					 5.<declareStmt>
+						 6.<idList>
+							 7.ID loop_var
+						 6.INTEGER integer
+					 5.<assignmentStmt>
+						 6.ID y
+						 6.<lvalueIDStmt>
+							 7.NUM 19
+					 5.<assignmentStmt>
+						 6.ID z
+						 6.<lvalueIDStmt>
+							 7.NUM 56
+					 5.FOR for
+						 6.ID loop_var
+						 6.<range_for_loop>
+							 7.<index_for_loop>
+								 8.NUM 3
+							 7.<index_for_loop>
+								 8.NUM 6
+						 6.<statements>
+							 7.<ioStmt>
+								 8.GET_VALUE get_value
+								 8.ID x
+							 7.SWITCH switch
+								 8.ID x
+								 8.<caseStmts>
+									 9.NUM 1
+										 10.<statements>
+											 11.<assignmentStmt>
+												 12.ID y
+												 12.<lvalueIDStmt>
+													 13.PLUS +
+														 14.MINUS -
+															 15.MUL *
+																 16.ID x
+																 16.NUM 2
+															 15.ID y
+														 14.ID loop_var
+											 11.<ioStmt>
+												 12.PRINT print
+												 12.ID y
+									 9.NUM 2
+										 10.<statements>
+											 11.<assignmentStmt>
+												 12.ID z
+												 12.<lvalueIDStmt>
+													 13.PLUS +
+														 14.MINUS -
+															 15.MUL *
+																 16.ID x
+																 16.NUM 3
+															 15.ID z
+														 14.ID loop_var
+											 11.<ioStmt>
+												 12.PRINT print
+												 12.ID z
+								 8.DEFAULT default
+									 9.<statements>
+										 10.<ioStmt>
+											 11.PRINT print
+											 11.ID x
+							 7.<ioStmt>
+								 8.PRINT print
+								 8.ID y
+							 7.<ioStmt>
+								 8.PRINT print
+								 8.ID z
+		 2.<otherModules>

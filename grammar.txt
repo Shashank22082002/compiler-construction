@@ -1,0 +1,142 @@
+<program'> <program> $
+<program>    <moduleDeclarations> <otherModules> <driverModule> <otherModules>
+<moduleDeclarations> <moduleDeclaration> <moduleDeclarations>
+<moduleDeclarations> epsilon
+<moduleDeclaration> DECLARE MODULE ID SEMICOL
+<otherModules> <module> <otherModules>
+<otherModules> epsilon
+<driverModule> DRIVERDEF DRIVER PROGRAM DRIVERENDDEF <moduleDef>
+<module> DEF MODULE ID ENDDEF TAKES INPUT SQBO <input_plist> SQBC SEMICOL <ret> <moduleDef>
+<ret> RETURNS SQBO <output_plist> SQBC SEMICOL
+<ret> epsilon
+<input_plist> ID COLON <dataType> <N1>
+<N1> COMMA ID COLON <dataType> <N1>
+<N1> epsilon
+<output_plist> ID COLON <type> <N2>
+<N2> COMMA ID COLON <type> <N2>
+<N2> epsilon
+<dataType> ARRAY SQBO <range_arrays> SQBC OF <type>
+<dataType> <type>
+<range_arrays> <index_arr> RANGEOP <index_arr>
+<type> INTEGER
+<type> REAL
+<type> BOOLEAN
+<index_arr> <sign> <new_index>
+<new_index> NUM
+<new_index> ID
+<sign> PLUS
+<sign> MINUS
+<sign> epsilon
+<moduleDef> START_TK <statements> END
+<statements> <statement> <statements>
+<statements> epsilon
+<statement> <ioStmt>
+<statement> <simpleStmt>
+<statement> <declareStmt>
+<statement> <condionalStmt>
+<statement> <iterativeStmt>
+<ioStmt> GET_VALUE BO ID BC SEMICOL
+<ioStmt> PRINT BO <var_print> BC SEMICOL
+<boolConstt> TRUE
+<boolConstt> FALSE
+<var_print> ID <P1>
+<var_print> NUM
+<var_print> RNUM
+<var_print> <boolConstt>
+<P1> SQBO <index_arr> SQBC
+<P1> epsilon
+<simpleStmt> <assignmentStmt>
+<simpleStmt> <moduleReuseStmt>
+<assignmentStmt> ID <whichStmt>
+<whichStmt> <lvalueIDStmt>
+<whichStmt> <lvalueARRStmt>
+<lvalueIDStmt> ASSIGNOP <expression> SEMICOL
+<lvalueARRStmt> SQBO <element_index_with_expressions> SQBC ASSIGNOP <expression> SEMICOL
+<moduleReuseStmt> <optional> USE MODULE ID WITH PARAMETERS <actual_para_list> SEMICOL
+<actual_para_list> <list_item> <actual_para_list'>
+<actual_para_list'> COMMA <list_item> <actual_para_list'>
+<actual_para_list'> epsilon
+<list_item> <sign> <actual_list_item>
+<list_item> <boolConstt>
+<actual_list_item> NUM
+<actual_list_item> RNUM
+<actual_list_item> ID <N_11>
+<N_11> SQBO <element_index_with_expressions> SQBC
+<N_11> epsilon
+<optional> SQBO <idList> SQBC ASSIGNOP
+<optional> epsilon
+<idList> ID <N3>
+<N3> COMMA ID <N3>
+<N3> epsilon
+<expression> <arithmeticOrBooleanExpr>
+<expression> <U>
+<U> <unary_op> <new_NT>
+<new_NT> BO <arithmeticExpr> BC
+<new_NT> <var_id_num>
+<var_id_num> ID
+<var_id_num> NUM
+<var_id_num> RNUM
+<unary_op> PLUS
+<unary_op> MINUS
+<arithmeticOrBooleanExpr> <AnyTerm> <N7>
+<N7> <logicalOp> <AnyTerm> <N7>
+<N7> epsilon
+<AnyTerm> <arithmeticExpr> <N8>
+<AnyTerm> <boolConstt>
+<N8> <relationalOp> <arithmeticExpr>
+<N8> epsilon
+<arithmeticExpr> <term> <N4>
+<N4> <op1> <term> <N4>
+<N4> epsilon
+<term> <factor> <N5>
+<N5> <op2> <factor> <N5>
+<N5> epsilon
+<factor> BO <arithmeticOrBooleanExpr> BC
+<factor> NUM
+<factor> RNUM
+<factor> <boolConstt>
+<factor> ID <N_11>
+<arrExpr> <arrTerm> <arr_N4>
+<arr_N4> <op1> <arrTerm> <arr_N4>
+<arr_N4> epsilon
+<arrTerm> <arrFactor> <arr_N5>
+<arr_N5> <op2> <arrFactor> <arr_N5>
+<arr_N5> epsilon
+<arrFactor> ID
+<arrFactor> NUM
+<arrFactor> <boolConstt>
+<arrFactor> BO <arrExpr> BC
+<element_index_with_expressions> <arrExpr>
+<element_index_with_expressions> <unary_op> <N_10>
+<N_10> <new_index>
+<N_10> BO <arrExpr> BC
+<op1> PLUS
+<op1> MINUS
+<op2> MUL
+<op2> DIV
+<logicalOp> AND
+<logicalOp> OR
+<relationalOp> LT
+<relationalOp> LE
+<relationalOp> GT
+<relationalOp> GE
+<relationalOp> EQ
+<relationalOp> NE
+<declareStmt> DECLARE <idList> COLON <dataType> SEMICOL
+<condionalStmt> SWITCH BO ID BC START_TK <caseStmts> <default> END
+<caseStmts> CASE <value> COLON <statements> BREAK SEMICOL <N9>
+<N9> CASE <value> COLON <statements> BREAK SEMICOL <N9>
+<N9> epsilon
+<value> NUM
+<value> TRUE
+<value> FALSE
+<default> DEFAULT COLON <statements> BREAK SEMICOL
+<default> epsilon
+<iterativeStmt> FOR BO ID IN <range_for_loop> BC START_TK <statements> END
+<iterativeStmt> WHILE BO <arithmeticOrBooleanExpr> BC START_TK <statements> END
+<range_for_loop> <index_for_loop> RANGEOP <index_for_loop>
+<index_for_loop> <sign_for_loop> <new_index_for_loop>
+<new_index_for_loop> NUM
+<sign_for_loop> PLUS
+<sign_for_loop> MINUS
+<sign_for_loop> epsilon

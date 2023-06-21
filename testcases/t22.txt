@@ -1,0 +1,16 @@
+** -------- ERRORFUL TESTCASE 1 --------- **
+<<<driver ; program ;>>> ** UNIDENTIFIED TOKEN **
+    start " " ** UNIDENTIFIED TOKEN **
+        declare a,b:integer;
+        declare c:boolean   ** MISSING SEMICOL **
+        a:=21;
+        b:=23:
+        c:=(b-a>3);
+            switch(c)
+         ** MISSING START **
+            case ** MIDLINE COMMENT ** true: b:=100;
+            break; 
+            case b:= -100; ** MISSING ID **
+            break;
+        end
+    end
